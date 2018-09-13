@@ -171,6 +171,11 @@ public class GoodsDialogFragment extends BottomSheetDialogFragment implements On
             super.onStart();
             final BottomSheetBehavior<?> behavior = getBehavior();
             if (behavior != null) {
+                /*
+                window有一个黑色背景的渐变动画，
+                延迟300ms，等动画结束在执行菜单弹出动画。
+                否则看起来很突兀
+                 */
                 getView().postDelayed(new Runnable() {
                     @Override
                     public void run() {
